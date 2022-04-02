@@ -1,0 +1,1702 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "ad39b671-7125-44b8-b9c6-c903aa7cd83a"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 103,
+      "y": 104
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "Warning command",
+          "value": "?warn @user reason",
+          "inline": "true"
+        },
+        {
+          "name": "Kick command",
+          "value": "?kick @user reason",
+          "inline": "true"
+        },
+        {
+          "name": "Ban command",
+          "value": "?ban @user days reason",
+          "inline": "true"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ad39b671-7125-44b8-b9c6-c903aa7cd83a"
+        }
+      ],
+      "x": 503,
+      "y": 105,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "A3D84F",
+        "GrandPlex Security Bot",
+        "",
+        "",
+        "",
+        "",
+        "Here you can find all the security related commands. You can also see how you need to use them use them.\n\nIf your having any issues with this bot please contact:\n- @Laurens#2878 -- Owner\n- @Jeroentje#4361 -- Admin / Developer",
+        "",
+        "",
+        "©2022 | Jeroentje#4261",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Role",
+      "guid": "ad39b671-7125-44b8-b9c6-c903aa7cd83a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "37eda463-a170-44f9-af54-61378ffc9294"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "03461614-d5a0-44e9-88f0-bb4ecc3fc89c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 302,
+      "y": 104,
+      "rtype": "User Action",
+      "rsubtype": "Check If User Has Role",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "Admin"
+      ],
+      "formnames": [
+        "user",
+        "role"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Delete Command Message",
+      "guid": "03461614-d5a0-44e9-88f0-bb4ecc3fc89c",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "6b8380a6-1a51-4a62-a3c1-f21d2d9ee747"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ad39b671-7125-44b8-b9c6-c903aa7cd83a"
+        },
+        {
+          "label": "trigger",
+          "id": "4599f12d-cd25-4535-be7d-6eba83345c51"
+        },
+        {
+          "label": "trigger",
+          "id": "5cabc157-6486-4684-b4e2-00043d3dfbd3"
+        },
+        {
+          "label": "trigger",
+          "id": "66e56f8c-3401-4232-b4bf-be8ebbaa93a5"
+        },
+        {
+          "label": "trigger",
+          "id": "ab596ed0-b841-4cd7-92cc-f10826363a53"
+        },
+        {
+          "label": "trigger",
+          "id": ""
+        }
+      ],
+      "x": 704,
+      "y": 42,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Delete Command msg",
+      "guid": "6b8380a6-1a51-4a62-a3c1-f21d2d9ee747",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c55fa808-a8c3-4a81-b55d-62f96b261a41"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "03461614-d5a0-44e9-88f0-bb4ecc3fc89c"
+        }
+      ],
+      "x": 903,
+      "y": 105,
+      "rtype": "Message",
+      "rsubtype": "Delete Message",
+      "formdata": [
+        "${dbsVars.CommandMessage.id}",
+        "${dbsVars.CommandChannel.id}"
+      ],
+      "formnames": [
+        "varname",
+        "channelName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Not Allowed To Use This Command",
+      "guid": "c55fa808-a8c3-4a81-b55d-62f96b261a41",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "not_allowed_msg",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ad7e39fb-1765-4647-b0a7-d678e557589b"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6b8380a6-1a51-4a62-a3c1-f21d2d9ee747"
+        }
+      ],
+      "x": 1103,
+      "y": 103,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Your not allowed to use this command.",
+        "not_allowed_msg",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Delete Not Allowed To Use This Command",
+      "guid": "af8ffbee-3102-49d2-8521-a12d4f88d59e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ad7e39fb-1765-4647-b0a7-d678e557589b"
+        }
+      ],
+      "x": 1503,
+      "y": 102,
+      "rtype": "Message",
+      "rsubtype": "Delete Message",
+      "formdata": [
+        "${tempVars.not_allowed_msg.id}",
+        "${dbsVars.CommandChannel.id}"
+      ],
+      "formnames": [
+        "varname",
+        "channelName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Wait 4 Seconds",
+      "guid": "ad7e39fb-1765-4647-b0a7-d678e557589b",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "af8ffbee-3102-49d2-8521-a12d4f88d59e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c55fa808-a8c3-4a81-b55d-62f96b261a41"
+        }
+      ],
+      "x": 1304,
+      "y": 103,
+      "rtype": "Control",
+      "rsubtype": "Wait",
+      "messageActionRows": []
+    },
+    {
+      "type": "command",
+      "name": "warn",
+      "guid": "1abdc920-5173-4a66-abf0-65fdae7ef5d3",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "4599f12d-cd25-4535-be7d-6eba83345c51"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 102,
+      "y": 403
+    },
+    {
+      "type": "command",
+      "name": "kick",
+      "guid": "032acdd1-deb9-4f02-9b87-f72bf42fdabd",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "5cabc157-6486-4684-b4e2-00043d3dfbd3"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 102,
+      "y": 603
+    },
+    {
+      "type": "command",
+      "name": "ban",
+      "guid": "6c45528a-7134-46f1-8a5e-58df325913ab",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "66e56f8c-3401-4232-b4bf-be8ebbaa93a5"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 103,
+      "y": 805
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions",
+      "guid": "4599f12d-cd25-4535-be7d-6eba83345c51",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "0c726a38-e6ef-402f-b848-f21a4c2c8880"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "03461614-d5a0-44e9-88f0-bb4ecc3fc89c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1abdc920-5173-4a66-abf0-65fdae7ef5d3"
+        }
+      ],
+      "x": 302,
+      "y": 404,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_1",
+      "guid": "5cabc157-6486-4684-b4e2-00043d3dfbd3",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "599bc331-a10f-48c4-95c3-52f6bb8696be"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "03461614-d5a0-44e9-88f0-bb4ecc3fc89c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "032acdd1-deb9-4f02-9b87-f72bf42fdabd"
+        }
+      ],
+      "x": 305,
+      "y": 602,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "KICK_MEMBERS",
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check User Permissions_2",
+      "guid": "66e56f8c-3401-4232-b4bf-be8ebbaa93a5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "03f7cc13-1a2e-4366-9e99-864fe7bef655"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "03461614-d5a0-44e9-88f0-bb4ecc3fc89c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6c45528a-7134-46f1-8a5e-58df325913ab"
+        }
+      ],
+      "x": 306,
+      "y": 805,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "BAN_MEMBERS",
+          "VIEW_AUDIT_LOG"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "get user warn",
+      "guid": "0c726a38-e6ef-402f-b848-f21a4c2c8880",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "74e97116-5565-4bca-83cd-65f9812840d6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4599f12d-cd25-4535-be7d-6eba83345c51"
+        }
+      ],
+      "x": 504,
+      "y": 402,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "user_warn",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "get reason warn",
+      "guid": "74e97116-5565-4bca-83cd-65f9812840d6",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "warn_reason",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "fe70507c-de8b-4696-97ab-789b4d8a4ed0"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "0c726a38-e6ef-402f-b848-f21a4c2c8880"
+        }
+      ],
+      "x": 704,
+      "y": 404,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "warn_reason",
+        "Number",
+        "temp",
+        "2+"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check if user has first warning role",
+      "guid": "fe70507c-de8b-4696-97ab-789b4d8a4ed0",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "431e67f8-601d-47b9-a5a7-c76cca02608e"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "f50f0ae8-fa3a-40ba-89c6-9da345a1598e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "74e97116-5565-4bca-83cd-65f9812840d6"
+        }
+      ],
+      "x": 902,
+      "y": 264,
+      "rtype": "User Action",
+      "rsubtype": "Check If User Has Role",
+      "formdata": [
+        "${tempVars.user_warn.id}",
+        "FIRST WARNING"
+      ],
+      "formnames": [
+        "user",
+        "role"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check if user has second warning role",
+      "guid": "431e67f8-601d-47b9-a5a7-c76cca02608e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "08141c49-1246-49f1-b508-7637205fd3f2"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "7d61a32f-ec66-44d9-99b4-a78ebfbc8d3f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fe70507c-de8b-4696-97ab-789b4d8a4ed0"
+        }
+      ],
+      "x": 1304,
+      "y": 262,
+      "rtype": "User Action",
+      "rsubtype": "Check If User Has Role",
+      "formdata": [
+        "${tempVars.user_warn.id}",
+        "SECOND WARNING"
+      ],
+      "formnames": [
+        "user",
+        "role"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check if user has third warning role",
+      "guid": "08141c49-1246-49f1-b508-7637205fd3f2",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "ede0f72e-3d93-4308-9e16-2c0d7228f64b"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "c715c1d2-d897-45ac-9d90-9373204af576"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "431e67f8-601d-47b9-a5a7-c76cca02608e"
+        }
+      ],
+      "x": 1703,
+      "y": 262,
+      "rtype": "User Action",
+      "rsubtype": "Check If User Has Role",
+      "formdata": [
+        "${tempVars.user_warn.id}",
+        "THIRD WARNING"
+      ],
+      "formnames": [
+        "user",
+        "role"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "give first warning",
+      "guid": "f50f0ae8-fa3a-40ba-89c6-9da345a1598e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "e5112f83-b823-413b-a62e-71048fc5d436"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fe70507c-de8b-4696-97ab-789b4d8a4ed0"
+        }
+      ],
+      "x": 905,
+      "y": 466,
+      "rtype": "User Action",
+      "rsubtype": "Add Role to User",
+      "formdata": [
+        "${tempVars.user_warn.id}",
+        "FIRST WARNING"
+      ],
+      "formnames": [
+        "user",
+        "roleName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "give second warning",
+      "guid": "7d61a32f-ec66-44d9-99b4-a78ebfbc8d3f",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "1a159d13-7256-4f01-9135-c73b6cb46993"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "431e67f8-601d-47b9-a5a7-c76cca02608e"
+        }
+      ],
+      "x": 1304,
+      "y": 466,
+      "rtype": "User Action",
+      "rsubtype": "Add Role to User",
+      "formdata": [
+        "${tempVars.user_warn.id}",
+        "SECOND WARNING"
+      ],
+      "formnames": [
+        "user",
+        "roleName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "give third warning",
+      "guid": "c715c1d2-d897-45ac-9d90-9373204af576",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ede0f72e-3d93-4308-9e16-2c0d7228f64b"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "08141c49-1246-49f1-b508-7637205fd3f2"
+        }
+      ],
+      "x": 1705,
+      "y": 466,
+      "rtype": "User Action",
+      "rsubtype": "Add Role to User",
+      "formdata": [
+        "${tempVars.user_warn.id}",
+        "THIRD WARNING"
+      ],
+      "formnames": [
+        "user",
+        "roleName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "ban user warn",
+      "guid": "73a2987a-cd6c-4363-9029-86d1882f2737",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a785f243-5dbb-495a-b2b2-420e5e70e3cc"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "def85e37-7127-4d8e-93ff-aa5c8b2181b7"
+        }
+      ],
+      "x": 2505,
+      "y": 489,
+      "rtype": "User Action",
+      "rsubtype": "Ban User",
+      "formdata": [
+        "${tempVars.user_warn.id}",
+        "Third warning = Ban for 7 days",
+        "7"
+      ],
+      "formnames": [
+        "user",
+        "reason",
+        "days"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "console msg first warning",
+      "guid": "e5112f83-b823-413b-a62e-71048fc5d436",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f50f0ae8-fa3a-40ba-89c6-9da345a1598e"
+        }
+      ],
+      "x": 1106,
+      "y": 467,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "💻console",
+        "FFAA00",
+        "!!WARNING!!",
+        "",
+        "",
+        "",
+        "",
+        "User: **<@${tempVars.user_warn.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>*** \nReason: **${tempVars.warn_reason}**\nWarning: **1**",
+        "",
+        "",
+        "©2022 | Jeroentje#4261",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "console msg second warning",
+      "guid": "1a159d13-7256-4f01-9135-c73b6cb46993",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7d61a32f-ec66-44d9-99b4-a78ebfbc8d3f"
+        }
+      ],
+      "x": 1507,
+      "y": 466,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "💻console",
+        "FFAA00",
+        "!!WARNING!!",
+        "",
+        "",
+        "",
+        "",
+        "User: **<@${tempVars.user_warn.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nReason: **${tempVars.warn_reason}**\nWarning: **2**",
+        "",
+        "",
+        "©2022 | Jeroentje#4261",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "console msg third warning",
+      "guid": "c5a15c9f-0afa-4a49-9dde-f1407b496a07",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "def85e37-7127-4d8e-93ff-aa5c8b2181b7"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ede0f72e-3d93-4308-9e16-2c0d7228f64b"
+        }
+      ],
+      "x": 2106,
+      "y": 465,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "💻console",
+        "FFAA00",
+        "!!WARNING!!",
+        "",
+        "",
+        "",
+        "",
+        "User: **<@${tempVars.user_warn.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nReason: **${tempVars.warn_reason}**\nWarning: **3**",
+        "",
+        "",
+        "©2022 | Jeroentje#4261",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "console msg warning ban",
+      "guid": "a785f243-5dbb-495a-b2b2-420e5e70e3cc",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "73a2987a-cd6c-4363-9029-86d1882f2737"
+        }
+      ],
+      "x": 2704,
+      "y": 466,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "💻console",
+        "FF5555",
+        "Ban",
+        "",
+        "",
+        "",
+        "",
+        "User: **<@${tempVars.user_warn.id}>** \nBy: ***CONSOLE***\nDays: **7**\nReason: **3 Warnings**",
+        "",
+        "",
+        "©2022 | Jeroentje#4261",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "wait 1 second",
+      "guid": "def85e37-7127-4d8e-93ff-aa5c8b2181b7",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "73a2987a-cd6c-4363-9029-86d1882f2737"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c5a15c9f-0afa-4a49-9dde-f1407b496a07"
+        }
+      ],
+      "x": 2304,
+      "y": 490,
+      "rtype": "Control",
+      "rsubtype": "Wait",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "third warning = ban",
+      "guid": "ede0f72e-3d93-4308-9e16-2c0d7228f64b",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c5a15c9f-0afa-4a49-9dde-f1407b496a07"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "08141c49-1246-49f1-b508-7637205fd3f2"
+        },
+        {
+          "label": "trigger",
+          "id": "c715c1d2-d897-45ac-9d90-9373204af576"
+        }
+      ],
+      "x": 1904,
+      "y": 396,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "get user kick",
+      "guid": "599bc331-a10f-48c4-95c3-52f6bb8696be",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "fe3efbc9-5a85-4f78-8641-06ede0bc0b1e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5cabc157-6486-4684-b4e2-00043d3dfbd3"
+        }
+      ],
+      "x": 505,
+      "y": 604,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "user_kick",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "get user ban",
+      "guid": "03f7cc13-1a2e-4366-9e99-864fe7bef655",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "5ee928a6-57e4-4521-b90f-efc5e13c203c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "66e56f8c-3401-4232-b4bf-be8ebbaa93a5"
+        }
+      ],
+      "x": 504,
+      "y": 803,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "user_ban",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "get reason kick",
+      "guid": "fe3efbc9-5a85-4f78-8641-06ede0bc0b1e",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "kick_reason",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d54310f6-7f30-4719-9178-4cf2d5c1c974"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "599bc331-a10f-48c4-95c3-52f6bb8696be"
+        }
+      ],
+      "x": 705,
+      "y": 605,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "kick_reason",
+        "Number",
+        "temp",
+        "2+"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "get reason ban",
+      "guid": "98553a9a-0ca2-448b-b3cb-cb08dca8e9ff",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "ban_reason",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "e1fc61e4-fb56-46cb-bdb8-0232917e803a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5ee928a6-57e4-4521-b90f-efc5e13c203c"
+        }
+      ],
+      "x": 906,
+      "y": 804,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "ban_reason",
+        "Number",
+        "temp",
+        "3+"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "kick user",
+      "guid": "d54310f6-7f30-4719-9178-4cf2d5c1c974",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "db310b1c-f517-4849-b40a-d33bf2adf2b1"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fe3efbc9-5a85-4f78-8641-06ede0bc0b1e"
+        }
+      ],
+      "x": 905,
+      "y": 603,
+      "rtype": "User Action",
+      "rsubtype": "Kick User",
+      "formdata": [
+        "${tempVars.user_kick.id}",
+        "${tempVars.kick_reason}"
+      ],
+      "formnames": [
+        "user",
+        "reason"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "ban user",
+      "guid": "e1fc61e4-fb56-46cb-bdb8-0232917e803a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "96ae2038-da0d-4d6b-98b9-c6b94f28cbe6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "98553a9a-0ca2-448b-b3cb-cb08dca8e9ff"
+        }
+      ],
+      "x": 1104,
+      "y": 804,
+      "rtype": "User Action",
+      "rsubtype": "Ban User",
+      "formdata": [
+        "${tempVars.user_ban.id}",
+        "${tempVars.ban_reason}",
+        "${tempVars.days_ban}"
+      ],
+      "formnames": [
+        "user",
+        "reason",
+        "days"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "get days ban",
+      "guid": "5ee928a6-57e4-4521-b90f-efc5e13c203c",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "days_ban",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "98553a9a-0ca2-448b-b3cb-cb08dca8e9ff"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "03f7cc13-1a2e-4366-9e99-864fe7bef655"
+        }
+      ],
+      "x": 703,
+      "y": 804,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "days_ban",
+        "Number",
+        "temp",
+        "2"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "console msg ban",
+      "guid": "96ae2038-da0d-4d6b-98b9-c6b94f28cbe6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e1fc61e4-fb56-46cb-bdb8-0232917e803a"
+        }
+      ],
+      "x": 1306,
+      "y": 805,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "💻console",
+        "FF5555",
+        "Ban",
+        "",
+        "",
+        "",
+        "",
+        "User: **<@${tempVars.user_ban.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nDays: **${tempVars.days_ban}**\nReason: **${tempVars.ban_reason}**",
+        "",
+        "",
+        "©2022 | Jeroentje#4261",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "console msg kick",
+      "guid": "db310b1c-f517-4849-b40a-d33bf2adf2b1",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d54310f6-7f30-4719-9178-4cf2d5c1c974"
+        }
+      ],
+      "x": 1104,
+      "y": 603,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "💻console",
+        "FF5555",
+        "Kick",
+        "",
+        "",
+        "",
+        "",
+        "User: **<@${tempVars.user_kick.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nReason: **${tempVars.kick_reason}**",
+        "",
+        "",
+        "©2022 | Jeroentje#4261",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "rules",
+      "guid": "173667dd-7d0e-4f12-9579-2cf23ea456bf",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "ab596ed0-b841-4cd7-92cc-f10826363a53"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 105,
+      "y": 1004,
+      "perms": [
+        "owner",
+        "admin"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "check msg channel",
+      "guid": "ab596ed0-b841-4cd7-92cc-f10826363a53",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "420f14b0-09a6-4353-a242-c121022109b6"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "03461614-d5a0-44e9-88f0-bb4ecc3fc89c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "173667dd-7d0e-4f12-9579-2cf23ea456bf"
+        }
+      ],
+      "x": 304,
+      "y": 1004,
+      "rtype": "Message",
+      "rsubtype": "Check If Message Is In Channel",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "📜rules"
+      ],
+      "formnames": [
+        "messageid",
+        "channelname"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "msg rules",
+      "guid": "420f14b0-09a6-4353-a242-c121022109b6",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "rules",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "dffa9690-a00d-41c5-b74d-851647e4cabb"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ab596ed0-b841-4cd7-92cc-f10826363a53"
+        }
+      ],
+      "x": 506,
+      "y": 1005,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "📜rules",
+        "A3D84F",
+        "📜Rules",
+        "",
+        "",
+        "",
+        "",
+        "1️⃣ Be respectful.\nDo not disrespect or harass anyone in this Discord. Use common sense and avoid death wishes, movie spoilers, discrimination, racism, sexism, homophobia, etc.\nFollow Discord's community guidelines here:\nhttps://discordapp.com/guidelines\n\n2️⃣ No threats.\nThreats of any kind and acting upon those threats are strictly forbidden. This includes blackmailing, releasing private info, and DDoSing.\nFollow Discord's terms of service here:\nhttps://discordapp.com/terms\n\n3️⃣ No NSFW.\nRefrain from posting any inappropriate or harmful links, photos, comments, and other offensive material. This includes but is not limited to pornography, gore, animal cruelty, viruses, screamer links, IP grabbers, etc.\n\n4️⃣ No inappropriate profiles.\nKeep your username, nickname, profile picture, and game status appropriate at all times. This includes blank, lengthy and spammy names, and any offensive material. Don't share pictures of others without their consent.\n\n5️⃣ No sensitive topics.\nDo not discuss sensitive topics or attempt to provoke other players. This includes but is not limited to political, religious, or suicidal debates. Keep those topics to PMs.\n\n6️⃣ No advertising.\nDo not advertise other Minecraft or Discord servers. You may play other servers in the voice channels, but don't put any IPs in chat. DM advertising or using your game status to advertise is also disallowed.\n\n7️⃣ Don't spam.\nDo not spam text messages, reactions, emojis, mentions, or any other form of spam. The use of spambots and macros are against Discord's ToS and will result in a permanent ban.\n\n***If you accept and follow the rules, react with \"✅\" to gain access to the server***",
+        "",
+        "",
+        "©2022 | Jeroentje#4261",
+        "false",
+        "rules",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "verify reaction rules",
+      "guid": "dffa9690-a00d-41c5-b74d-851647e4cabb",
+      "reactionFields": [
+        "✅"
+      ],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "✅",
+          "connections": [
+            "8252a0f6-402a-4b5b-8870-740723f6012c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "420f14b0-09a6-4353-a242-c121022109b6"
+        }
+      ],
+      "x": 707,
+      "y": 1003,
+      "rtype": "Reaction",
+      "rsubtype": "Add Reaction Listener",
+      "formdata": [
+        "${tempVars.rules.id}",
+        "0",
+        "rules_verify_emoji",
+        "rules_verify_user",
+        "BOOL_TRUE@@"
+      ],
+      "formnames": [
+        "message",
+        "duration",
+        "reactionemoji",
+        "reactionuser",
+        "react"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "add member role",
+      "guid": "8252a0f6-402a-4b5b-8870-740723f6012c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dffa9690-a00d-41c5-b74d-851647e4cabb"
+        }
+      ],
+      "x": 904,
+      "y": 1003,
+      "rtype": "User Action",
+      "rsubtype": "Add Role to User",
+      "formdata": [
+        "${tempVars.rules_verify_user.id}",
+        "Member"
+      ],
+      "formnames": [
+        "user",
+        "roleName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    }
+  ]
+}

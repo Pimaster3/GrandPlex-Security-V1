@@ -1,0 +1,633 @@
+{
+  "command": [
+    {
+      "name": "help",
+      "actions": [
+        {
+          "name": "Check User Role",
+          "category": "User Action",
+          "type": "Check If User Has Role",
+          "trueActions": [
+            {
+              "name": "help menu",
+              "category": "Message",
+              "type": "Send Embed",
+              "fields": [
+                {
+                  "name": "Warning command",
+                  "value": "?warn @user reason",
+                  "inline": "true"
+                },
+                {
+                  "name": "Kick command",
+                  "value": "?kick @user reason",
+                  "inline": "true"
+                },
+                {
+                  "name": "Ban command",
+                  "value": "?ban @user days reason",
+                  "inline": "true"
+                }
+              ],
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "A3D84F",
+              "title": "GrandPlex Security Bot",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "Here you can find all the security related commands. You can also see how you need to use them use them.\n\nIf your having any issues with this bot please contact:\n- @Laurens#2878 -- Owner\n- @Jeroentje#4361 -- Admin / Developer",
+              "thumbnail": "",
+              "image": "",
+              "footer": "©2022 | Jeroentje#4261",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "Delete Command msg",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${dbsVars.CommandMessage.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            },
+            {
+              "name": "Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Send Message",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "Your not allowed to use this command.",
+              "savetovariable": "not_allowed_msg",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Delete Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${tempVars.not_allowed_msg.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            }
+          ],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "role": "Admin"
+        }
+      ]
+    },
+    {
+      "name": "warn",
+      "actions": [
+        {
+          "name": "Check User Permissions",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "get user warn",
+              "category": "Variable",
+              "type": "Get Mentioned User",
+              "messageActionRows": [],
+              "varname": "user_warn",
+              "vartype": "User",
+              "savevartype": "temp"
+            },
+            {
+              "name": "get reason warn",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "warn_reason",
+              "vartype": "Number",
+              "savevartype": "temp",
+              "param": "2+"
+            },
+            {
+              "name": "Check if user has first warning role",
+              "category": "User Action",
+              "type": "Check If User Has Role",
+              "trueActions": [
+                {
+                  "name": "Check if user has second warning role",
+                  "category": "User Action",
+                  "type": "Check If User Has Role",
+                  "trueActions": [
+                    {
+                      "name": "Check if user has third warning role",
+                      "category": "User Action",
+                      "type": "Check If User Has Role",
+                      "trueActions": [
+                        {
+                          "name": "console msg third warning",
+                          "category": "Message",
+                          "type": "Send Embed",
+                          "messageActionRows": [],
+                          "channelname": "💻console",
+                          "color": "FFAA00",
+                          "title": "!!WARNING!!",
+                          "url": "",
+                          "authorname": "",
+                          "authorimageurl": "",
+                          "authorlink": "",
+                          "description": "User: **<@${tempVars.user_warn.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nReason: **${tempVars.warn_reason}**\nWarning: **3**",
+                          "thumbnail": "",
+                          "image": "",
+                          "footer": "©2022 | Jeroentje#4261",
+                          "timestamp": "BOOL_TRUE@@",
+                          "savetovariable": "",
+                          "savetovariabletype": "temp"
+                        },
+                        {
+                          "name": "ban user warn",
+                          "category": "User Action",
+                          "type": "Ban User",
+                          "messageActionRows": [],
+                          "user": "${tempVars.user_warn.id}",
+                          "reason": "Third warning = Ban for 7 days",
+                          "days": "7"
+                        },
+                        {
+                          "name": "console msg warning ban",
+                          "category": "Message",
+                          "type": "Send Embed",
+                          "messageActionRows": [],
+                          "channelname": "💻console",
+                          "color": "FF5555",
+                          "title": "Ban",
+                          "url": "",
+                          "authorname": "",
+                          "authorimageurl": "",
+                          "authorlink": "",
+                          "description": "User: **<@${tempVars.user_warn.id}>** \nBy: ***CONSOLE***\nDays: **7**\nReason: **3 Warnings**",
+                          "thumbnail": "",
+                          "image": "",
+                          "footer": "©2022 | Jeroentje#4261",
+                          "timestamp": "BOOL_TRUE@@",
+                          "savetovariable": "",
+                          "savetovariabletype": "temp"
+                        }
+                      ],
+                      "falseActions": [
+                        {
+                          "name": "give third warning",
+                          "category": "User Action",
+                          "type": "Add Role to User",
+                          "messageActionRows": [],
+                          "user": "${tempVars.user_warn.id}",
+                          "rolename": "THIRD WARNING"
+                        },
+                        {
+                          "name": "console msg third warning",
+                          "category": "Message",
+                          "type": "Send Embed",
+                          "messageActionRows": [],
+                          "channelname": "💻console",
+                          "color": "FFAA00",
+                          "title": "!!WARNING!!",
+                          "url": "",
+                          "authorname": "",
+                          "authorimageurl": "",
+                          "authorlink": "",
+                          "description": "User: **<@${tempVars.user_warn.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nReason: **${tempVars.warn_reason}**\nWarning: **3**",
+                          "thumbnail": "",
+                          "image": "",
+                          "footer": "©2022 | Jeroentje#4261",
+                          "timestamp": "BOOL_TRUE@@",
+                          "savetovariable": "",
+                          "savetovariabletype": "temp"
+                        },
+                        {
+                          "name": "ban user warn",
+                          "category": "User Action",
+                          "type": "Ban User",
+                          "messageActionRows": [],
+                          "user": "${tempVars.user_warn.id}",
+                          "reason": "Third warning = Ban for 7 days",
+                          "days": "7"
+                        },
+                        {
+                          "name": "console msg warning ban",
+                          "category": "Message",
+                          "type": "Send Embed",
+                          "messageActionRows": [],
+                          "channelname": "💻console",
+                          "color": "FF5555",
+                          "title": "Ban",
+                          "url": "",
+                          "authorname": "",
+                          "authorimageurl": "",
+                          "authorlink": "",
+                          "description": "User: **<@${tempVars.user_warn.id}>** \nBy: ***CONSOLE***\nDays: **7**\nReason: **3 Warnings**",
+                          "thumbnail": "",
+                          "image": "",
+                          "footer": "©2022 | Jeroentje#4261",
+                          "timestamp": "BOOL_TRUE@@",
+                          "savetovariable": "",
+                          "savetovariabletype": "temp"
+                        }
+                      ],
+                      "messageActionRows": [],
+                      "user": "${tempVars.user_warn.id}",
+                      "role": "THIRD WARNING"
+                    }
+                  ],
+                  "falseActions": [
+                    {
+                      "name": "give second warning",
+                      "category": "User Action",
+                      "type": "Add Role to User",
+                      "messageActionRows": [],
+                      "user": "${tempVars.user_warn.id}",
+                      "rolename": "SECOND WARNING"
+                    },
+                    {
+                      "name": "console msg second warning",
+                      "category": "Message",
+                      "type": "Send Embed",
+                      "messageActionRows": [],
+                      "channelname": "💻console",
+                      "color": "FFAA00",
+                      "title": "!!WARNING!!",
+                      "url": "",
+                      "authorname": "",
+                      "authorimageurl": "",
+                      "authorlink": "",
+                      "description": "User: **<@${tempVars.user_warn.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nReason: **${tempVars.warn_reason}**\nWarning: **2**",
+                      "thumbnail": "",
+                      "image": "",
+                      "footer": "©2022 | Jeroentje#4261",
+                      "timestamp": "BOOL_TRUE@@",
+                      "savetovariable": "",
+                      "savetovariabletype": "temp"
+                    }
+                  ],
+                  "messageActionRows": [],
+                  "user": "${tempVars.user_warn.id}",
+                  "role": "SECOND WARNING"
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "give first warning",
+                  "category": "User Action",
+                  "type": "Add Role to User",
+                  "messageActionRows": [],
+                  "user": "${tempVars.user_warn.id}",
+                  "rolename": "FIRST WARNING"
+                },
+                {
+                  "name": "console msg first warning",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "messageActionRows": [],
+                  "channelname": "💻console",
+                  "color": "FFAA00",
+                  "title": "!!WARNING!!",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "User: **<@${tempVars.user_warn.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>*** \nReason: **${tempVars.warn_reason}**\nWarning: **1**",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "©2022 | Jeroentje#4261",
+                  "timestamp": "BOOL_TRUE@@",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "messageActionRows": [],
+              "user": "${tempVars.user_warn.id}",
+              "role": "FIRST WARNING"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "Delete Command msg",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${dbsVars.CommandMessage.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            },
+            {
+              "name": "Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Send Message",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "Your not allowed to use this command.",
+              "savetovariable": "not_allowed_msg",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Delete Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${tempVars.not_allowed_msg.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            }
+          ],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kick",
+      "actions": [
+        {
+          "name": "Check User Permissions_1",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "get user kick",
+              "category": "Variable",
+              "type": "Get Mentioned User",
+              "messageActionRows": [],
+              "varname": "user_kick",
+              "vartype": "User",
+              "savevartype": "temp"
+            },
+            {
+              "name": "get reason kick",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "kick_reason",
+              "vartype": "Number",
+              "savevartype": "temp",
+              "param": "2+"
+            },
+            {
+              "name": "kick user",
+              "category": "User Action",
+              "type": "Kick User",
+              "messageActionRows": [],
+              "user": "${tempVars.user_kick.id}",
+              "reason": "${tempVars.kick_reason}"
+            },
+            {
+              "name": "console msg kick",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "💻console",
+              "color": "FF5555",
+              "title": "Kick",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "User: **<@${tempVars.user_kick.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nReason: **${tempVars.kick_reason}**",
+              "thumbnail": "",
+              "image": "",
+              "footer": "©2022 | Jeroentje#4261",
+              "timestamp": "BOOL_TRUE@@",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "Delete Command msg",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${dbsVars.CommandMessage.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            },
+            {
+              "name": "Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Send Message",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "Your not allowed to use this command.",
+              "savetovariable": "not_allowed_msg",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Delete Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${tempVars.not_allowed_msg.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            }
+          ],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "KICK_MEMBERS",
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ban",
+      "actions": [
+        {
+          "name": "Check User Permissions_2",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "get user ban",
+              "category": "Variable",
+              "type": "Get Mentioned User",
+              "messageActionRows": [],
+              "varname": "user_ban",
+              "vartype": "User",
+              "savevartype": "temp"
+            },
+            {
+              "name": "get days ban",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "days_ban",
+              "vartype": "Number",
+              "savevartype": "temp",
+              "param": "2"
+            },
+            {
+              "name": "get reason ban",
+              "category": "Variable",
+              "type": "Store Value in Variable",
+              "messageActionRows": [],
+              "varname": "ban_reason",
+              "vartype": "Number",
+              "savevartype": "temp",
+              "param": "3+"
+            },
+            {
+              "name": "ban user",
+              "category": "User Action",
+              "type": "Ban User",
+              "messageActionRows": [],
+              "user": "${tempVars.user_ban.id}",
+              "reason": "${tempVars.ban_reason}",
+              "days": "${tempVars.days_ban}"
+            },
+            {
+              "name": "console msg ban",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "💻console",
+              "color": "FF5555",
+              "title": "Ban",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "User: **<@${tempVars.user_ban.id}>** \nBy: ***<@${dbsVars.CommandAuthor.id}>***\nDays: **${tempVars.days_ban}**\nReason: **${tempVars.ban_reason}**",
+              "thumbnail": "",
+              "image": "",
+              "footer": "©2022 | Jeroentje#4261",
+              "timestamp": "BOOL_TRUE@@",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "Delete Command msg",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${dbsVars.CommandMessage.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            },
+            {
+              "name": "Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Send Message",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "Your not allowed to use this command.",
+              "savetovariable": "not_allowed_msg",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Delete Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${tempVars.not_allowed_msg.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            }
+          ],
+          "messageActionRows": [],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "BAN_MEMBERS",
+            "VIEW_AUDIT_LOG"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rules",
+      "perms": [
+        "owner",
+        "admin"
+      ],
+      "actions": [
+        {
+          "name": "check msg channel",
+          "category": "Message",
+          "type": "Check If Message Is In Channel",
+          "trueActions": [
+            {
+              "name": "msg rules",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "📜rules",
+              "color": "A3D84F",
+              "title": "📜Rules",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "1️⃣ Be respectful.\nDo not disrespect or harass anyone in this Discord. Use common sense and avoid death wishes, movie spoilers, discrimination, racism, sexism, homophobia, etc.\nFollow Discord's community guidelines here:\nhttps://discordapp.com/guidelines\n\n2️⃣ No threats.\nThreats of any kind and acting upon those threats are strictly forbidden. This includes blackmailing, releasing private info, and DDoSing.\nFollow Discord's terms of service here:\nhttps://discordapp.com/terms\n\n3️⃣ No NSFW.\nRefrain from posting any inappropriate or harmful links, photos, comments, and other offensive material. This includes but is not limited to pornography, gore, animal cruelty, viruses, screamer links, IP grabbers, etc.\n\n4️⃣ No inappropriate profiles.\nKeep your username, nickname, profile picture, and game status appropriate at all times. This includes blank, lengthy and spammy names, and any offensive material. Don't share pictures of others without their consent.\n\n5️⃣ No sensitive topics.\nDo not discuss sensitive topics or attempt to provoke other players. This includes but is not limited to political, religious, or suicidal debates. Keep those topics to PMs.\n\n6️⃣ No advertising.\nDo not advertise other Minecraft or Discord servers. You may play other servers in the voice channels, but don't put any IPs in chat. DM advertising or using your game status to advertise is also disallowed.\n\n7️⃣ Don't spam.\nDo not spam text messages, reactions, emojis, mentions, or any other form of spam. The use of spambots and macros are against Discord's ToS and will result in a permanent ban.\n\n***If you accept and follow the rules, react with \"✅\" to gain access to the server***",
+              "thumbnail": "",
+              "image": "",
+              "footer": "©2022 | Jeroentje#4261",
+              "timestamp": "false",
+              "savetovariable": "rules",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "verify reaction rules",
+              "category": "Reaction",
+              "type": "Add Reaction Listener",
+              "reactionActions": {
+                "✅": [
+                  {
+                    "name": "add member role",
+                    "category": "User Action",
+                    "type": "Add Role to User",
+                    "messageActionRows": [],
+                    "user": "${tempVars.rules_verify_user.id}",
+                    "rolename": "Member"
+                  }
+                ]
+              },
+              "messageActionRows": [],
+              "message": "${tempVars.rules.id}",
+              "duration": "0",
+              "reactionemoji": "rules_verify_emoji",
+              "reactionuser": "rules_verify_user",
+              "react": "BOOL_TRUE@@"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "Delete Command msg",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${dbsVars.CommandMessage.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            },
+            {
+              "name": "Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Send Message",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "Your not allowed to use this command.",
+              "savetovariable": "not_allowed_msg",
+              "savetovariabletype": "temp"
+            },
+            {
+              "name": "Delete Not Allowed To Use This Command",
+              "category": "Message",
+              "type": "Delete Message",
+              "messageActionRows": [],
+              "varname": "${tempVars.not_allowed_msg.id}",
+              "channelname": "${dbsVars.CommandChannel.id}"
+            }
+          ],
+          "messageActionRows": [],
+          "messageid": "${dbsVars.CommandChannel.id}",
+          "channelname": "📜rules"
+        }
+      ]
+    }
+  ]
+}
