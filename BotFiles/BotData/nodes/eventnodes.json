@@ -10,9 +10,12 @@
       "outputs": [
         {
           "label": "responses",
-          "connections": []
+          "connections": [
+            "93985457-4675-4b03-885d-906945ebeb13"
+          ]
         }
       ],
+      "inputs": [],
       "x": 99,
       "y": 90,
       "perms": []
@@ -28,6 +31,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 101,
       "y": 400,
       "perms": []
@@ -45,6 +49,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 99,
       "y": 200,
       "perms": []
@@ -62,6 +67,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 300,
       "perms": []
@@ -77,6 +83,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 500,
       "perms": []
@@ -94,6 +101,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 610,
       "perms": []
@@ -111,6 +119,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 720,
       "perms": []
@@ -128,6 +137,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 830,
       "perms": []
@@ -145,6 +155,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 940,
       "perms": []
@@ -162,6 +173,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1050,
       "perms": []
@@ -179,6 +191,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1160,
       "perms": []
@@ -196,6 +209,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1270,
       "perms": []
@@ -213,6 +227,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1370,
       "perms": []
@@ -230,6 +245,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1480,
       "perms": []
@@ -247,6 +263,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1590,
       "perms": []
@@ -264,6 +281,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1700,
       "perms": []
@@ -281,6 +299,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1810,
       "perms": []
@@ -298,6 +317,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 1920,
       "perms": []
@@ -315,6 +335,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2030,
       "perms": []
@@ -332,6 +353,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2140,
       "perms": []
@@ -349,6 +371,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2250,
       "perms": []
@@ -366,6 +389,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2360,
       "perms": []
@@ -383,6 +407,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2470,
       "perms": []
@@ -400,6 +425,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2580,
       "perms": []
@@ -417,6 +443,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2690,
       "perms": []
@@ -434,6 +461,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2800,
       "perms": []
@@ -451,6 +479,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 2910,
       "perms": []
@@ -468,6 +497,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 3020,
       "perms": []
@@ -485,6 +515,7 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 3130,
       "perms": []
@@ -502,9 +533,78 @@
           "connections": []
         }
       ],
+      "inputs": [],
       "x": 100,
       "y": 3240,
       "perms": []
+    },
+    {
+      "type": "response",
+      "name": "wait 5 minutes",
+      "guid": "93985457-4675-4b03-885d-906945ebeb13",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3a316b44-8ee9-428d-8e62-9d7559c7cceb"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "49ebbc23-2903-4f05-ab69-bc9ecb4f067e"
+        }
+      ],
+      "x": 303,
+      "y": 92,
+      "rtype": "Control",
+      "rsubtype": "Wait",
+      "formdata": [
+        "5",
+        "minutes"
+      ],
+      "formnames": [
+        "waitduration",
+        "unit"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "add member role",
+      "guid": "3a316b44-8ee9-428d-8e62-9d7559c7cceb",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "93985457-4675-4b03-885d-906945ebeb13"
+        }
+      ],
+      "x": 507,
+      "y": 71,
+      "rtype": "User Action",
+      "rsubtype": "Add Role to User",
+      "formdata": [
+        "${tempVars.newuser.id}",
+        "Member"
+      ],
+      "formnames": [
+        "user",
+        "roleName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
     }
   ]
 }

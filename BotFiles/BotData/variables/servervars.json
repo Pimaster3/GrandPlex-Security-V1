@@ -1,3 +1,46 @@
 [{
   "957665018667753512": "1"
-},{}]
+},{
+  "rules": "2"
+},{
+  "channelId": "3",
+  "guildId": "4",
+  "deleted": false,
+  "id": "5",
+  "type": "6",
+  "system": false,
+  "content": "7",
+  "authorId": "8",
+  "pinned": false,
+  "tts": false,
+  "nonce": null,
+  "embeds": "9",
+  "components": "10",
+  "attachments": "11",
+  "stickers": "12",
+  "createdTimestamp": 1649516665782,
+  "editedTimestamp": null,
+  "webhookId": null,
+  "groupActivityApplicationId": null,
+  "applicationId": null,
+  "activity": null,
+  "flags": 0,
+  "reference": null,
+  "interaction": null,
+  "cleanContent": "7"
+},"958020171107287060","957665018667753512","962367390354665503","DEFAULT","","959754752839798795",[
+  "13"
+],[],[],[],{
+  "type": "14",
+  "title": "15",
+  "description": "16",
+  "url": null,
+  "color": 10737743,
+  "timestamp": null,
+  "fields": "17",
+  "thumbnail": null,
+  "image": null,
+  "video": null,
+  "author": null,
+  "provider": null
+},"rich","📜Rules","1️⃣ Be respectful.\nDo not disrespect or harass anyone in this Discord. Use common sense and avoid death wishes, movie spoilers, discrimination, racism, sexism, homophobia, etc.\nFollow Discord's community guidelines here:\nhttps://discordapp.com/guidelines\n\n2️⃣ No threats.\nThreats of any kind and acting upon those threats are strictly forbidden. This includes blackmailing, releasing private info, and DDoSing.\nFollow Discord's terms of service here:\nhttps://discordapp.com/terms\n\n3️⃣ No NSFW.\nRefrain from posting any inappropriate or harmful links, photos, comments, and other offensive material. This includes but is not limited to pornography, gore, animal cruelty, viruses, screamer links, IP grabbers, etc.\n\n4️⃣ No inappropriate profiles.\nKeep your username, nickname, profile picture, and game status appropriate at all times. This includes blank, lengthy and spammy names, and any offensive material. Don't share pictures of others without their consent.\n\n5️⃣ No sensitive topics.\nDo not discuss sensitive topics or attempt to provoke other players. This includes but is not limited to political, religious, or suicidal debates. Keep those topics to PMs.\n\n6️⃣ No advertising.\nDo not advertise other Minecraft or Discord servers. You may play other servers in the voice channels, but don't put any IPs in chat. DM advertising or using your game status to advertise is also disallowed.\n\n7️⃣ Don't spam.\nDo not spam text messages, reactions, emojis, mentions, or any other form of spam. The use of spambots and macros are against Discord's ToS and will result in a permanent ban.\n\n***You will have to wait 5 minutes to access to the server***",[]]

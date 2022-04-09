@@ -1524,8 +1524,6 @@
       "guid": "ab596ed0-b841-4cd7-92cc-f10826363a53",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "true",
@@ -1572,9 +1570,7 @@
       "outputs": [
         {
           "label": "next response",
-          "connections": [
-            "dffa9690-a00d-41c5-b74d-851647e4cabb"
-          ]
+          "connections": []
         }
       ],
       "inputs": [
@@ -1595,7 +1591,7 @@
         "",
         "",
         "",
-        "1️⃣ Be respectful.\nDo not disrespect or harass anyone in this Discord. Use common sense and avoid death wishes, movie spoilers, discrimination, racism, sexism, homophobia, etc.\nFollow Discord's community guidelines here:\nhttps://discordapp.com/guidelines\n\n2️⃣ No threats.\nThreats of any kind and acting upon those threats are strictly forbidden. This includes blackmailing, releasing private info, and DDoSing.\nFollow Discord's terms of service here:\nhttps://discordapp.com/terms\n\n3️⃣ No NSFW.\nRefrain from posting any inappropriate or harmful links, photos, comments, and other offensive material. This includes but is not limited to pornography, gore, animal cruelty, viruses, screamer links, IP grabbers, etc.\n\n4️⃣ No inappropriate profiles.\nKeep your username, nickname, profile picture, and game status appropriate at all times. This includes blank, lengthy and spammy names, and any offensive material. Don't share pictures of others without their consent.\n\n5️⃣ No sensitive topics.\nDo not discuss sensitive topics or attempt to provoke other players. This includes but is not limited to political, religious, or suicidal debates. Keep those topics to PMs.\n\n6️⃣ No advertising.\nDo not advertise other Minecraft or Discord servers. You may play other servers in the voice channels, but don't put any IPs in chat. DM advertising or using your game status to advertise is also disallowed.\n\n7️⃣ Don't spam.\nDo not spam text messages, reactions, emojis, mentions, or any other form of spam. The use of spambots and macros are against Discord's ToS and will result in a permanent ban.\n\n***If you accept and follow the rules, react with \"✅\" to gain access to the server***",
+        "1️⃣ Be respectful.\nDo not disrespect or harass anyone in this Discord. Use common sense and avoid death wishes, movie spoilers, discrimination, racism, sexism, homophobia, etc.\nFollow Discord's community guidelines here:\nhttps://discordapp.com/guidelines\n\n2️⃣ No threats.\nThreats of any kind and acting upon those threats are strictly forbidden. This includes blackmailing, releasing private info, and DDoSing.\nFollow Discord's terms of service here:\nhttps://discordapp.com/terms\n\n3️⃣ No NSFW.\nRefrain from posting any inappropriate or harmful links, photos, comments, and other offensive material. This includes but is not limited to pornography, gore, animal cruelty, viruses, screamer links, IP grabbers, etc.\n\n4️⃣ No inappropriate profiles.\nKeep your username, nickname, profile picture, and game status appropriate at all times. This includes blank, lengthy and spammy names, and any offensive material. Don't share pictures of others without their consent.\n\n5️⃣ No sensitive topics.\nDo not discuss sensitive topics or attempt to provoke other players. This includes but is not limited to political, religious, or suicidal debates. Keep those topics to PMs.\n\n6️⃣ No advertising.\nDo not advertise other Minecraft or Discord servers. You may play other servers in the voice channels, but don't put any IPs in chat. DM advertising or using your game status to advertise is also disallowed.\n\n7️⃣ Don't spam.\nDo not spam text messages, reactions, emojis, mentions, or any other form of spam. The use of spambots and macros are against Discord's ToS and will result in a permanent ban.\n\n***You will have to wait 5 minutes to access to the server***",
         "",
         "",
         "©2022 | Jeroentje#4261",
@@ -1618,86 +1614,6 @@
         "timestamp",
         "saveToVariable",
         "saveToVariableType"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "verify reaction rules",
-      "guid": "dffa9690-a00d-41c5-b74d-851647e4cabb",
-      "reactionFields": [
-        "✅"
-      ],
-      "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
-      "outputs": [
-        {
-          "label": "✅",
-          "connections": [
-            "8252a0f6-402a-4b5b-8870-740723f6012c"
-          ]
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "420f14b0-09a6-4353-a242-c121022109b6"
-        }
-      ],
-      "x": 707,
-      "y": 1003,
-      "rtype": "Reaction",
-      "rsubtype": "Add Reaction Listener",
-      "formdata": [
-        "${tempVars.rules.id}",
-        "0",
-        "rules_verify_emoji",
-        "rules_verify_user",
-        "BOOL_TRUE@@"
-      ],
-      "formnames": [
-        "message",
-        "duration",
-        "reactionemoji",
-        "reactionuser",
-        "react"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "add member role",
-      "guid": "8252a0f6-402a-4b5b-8870-740723f6012c",
-      "reactionFields": [],
-      "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": []
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "dffa9690-a00d-41c5-b74d-851647e4cabb"
-        }
-      ],
-      "x": 904,
-      "y": 1003,
-      "rtype": "User Action",
-      "rsubtype": "Add Role to User",
-      "formdata": [
-        "${tempVars.rules_verify_user.id}",
-        "Member"
-      ],
-      "formnames": [
-        "user",
-        "roleName"
       ],
       "messageActionRows": [],
       "valueFields": []

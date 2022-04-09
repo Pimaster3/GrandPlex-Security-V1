@@ -563,36 +563,13 @@
               "authorname": "",
               "authorimageurl": "",
               "authorlink": "",
-              "description": "1️⃣ Be respectful.\nDo not disrespect or harass anyone in this Discord. Use common sense and avoid death wishes, movie spoilers, discrimination, racism, sexism, homophobia, etc.\nFollow Discord's community guidelines here:\nhttps://discordapp.com/guidelines\n\n2️⃣ No threats.\nThreats of any kind and acting upon those threats are strictly forbidden. This includes blackmailing, releasing private info, and DDoSing.\nFollow Discord's terms of service here:\nhttps://discordapp.com/terms\n\n3️⃣ No NSFW.\nRefrain from posting any inappropriate or harmful links, photos, comments, and other offensive material. This includes but is not limited to pornography, gore, animal cruelty, viruses, screamer links, IP grabbers, etc.\n\n4️⃣ No inappropriate profiles.\nKeep your username, nickname, profile picture, and game status appropriate at all times. This includes blank, lengthy and spammy names, and any offensive material. Don't share pictures of others without their consent.\n\n5️⃣ No sensitive topics.\nDo not discuss sensitive topics or attempt to provoke other players. This includes but is not limited to political, religious, or suicidal debates. Keep those topics to PMs.\n\n6️⃣ No advertising.\nDo not advertise other Minecraft or Discord servers. You may play other servers in the voice channels, but don't put any IPs in chat. DM advertising or using your game status to advertise is also disallowed.\n\n7️⃣ Don't spam.\nDo not spam text messages, reactions, emojis, mentions, or any other form of spam. The use of spambots and macros are against Discord's ToS and will result in a permanent ban.\n\n***If you accept and follow the rules, react with \"✅\" to gain access to the server***",
+              "description": "1️⃣ Be respectful.\nDo not disrespect or harass anyone in this Discord. Use common sense and avoid death wishes, movie spoilers, discrimination, racism, sexism, homophobia, etc.\nFollow Discord's community guidelines here:\nhttps://discordapp.com/guidelines\n\n2️⃣ No threats.\nThreats of any kind and acting upon those threats are strictly forbidden. This includes blackmailing, releasing private info, and DDoSing.\nFollow Discord's terms of service here:\nhttps://discordapp.com/terms\n\n3️⃣ No NSFW.\nRefrain from posting any inappropriate or harmful links, photos, comments, and other offensive material. This includes but is not limited to pornography, gore, animal cruelty, viruses, screamer links, IP grabbers, etc.\n\n4️⃣ No inappropriate profiles.\nKeep your username, nickname, profile picture, and game status appropriate at all times. This includes blank, lengthy and spammy names, and any offensive material. Don't share pictures of others without their consent.\n\n5️⃣ No sensitive topics.\nDo not discuss sensitive topics or attempt to provoke other players. This includes but is not limited to political, religious, or suicidal debates. Keep those topics to PMs.\n\n6️⃣ No advertising.\nDo not advertise other Minecraft or Discord servers. You may play other servers in the voice channels, but don't put any IPs in chat. DM advertising or using your game status to advertise is also disallowed.\n\n7️⃣ Don't spam.\nDo not spam text messages, reactions, emojis, mentions, or any other form of spam. The use of spambots and macros are against Discord's ToS and will result in a permanent ban.\n\n***You will have to wait 5 minutes to access to the server***",
               "thumbnail": "",
               "image": "",
               "footer": "©2022 | Jeroentje#4261",
               "timestamp": "false",
               "savetovariable": "rules",
               "savetovariabletype": "server"
-            },
-            {
-              "name": "verify reaction rules",
-              "category": "Reaction",
-              "type": "Add Reaction Listener",
-              "reactionActions": {
-                "✅": [
-                  {
-                    "name": "add member role",
-                    "category": "User Action",
-                    "type": "Add Role to User",
-                    "messageActionRows": [],
-                    "user": "${tempVars.rules_verify_user.id}",
-                    "rolename": "Member"
-                  }
-                ]
-              },
-              "messageActionRows": [],
-              "message": "${tempVars.rules.id}",
-              "duration": "0",
-              "reactionemoji": "rules_verify_emoji",
-              "reactionuser": "rules_verify_user",
-              "react": "BOOL_TRUE@@"
             }
           ],
           "falseActions": [
