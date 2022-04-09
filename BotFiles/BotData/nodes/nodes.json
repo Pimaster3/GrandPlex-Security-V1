@@ -38,8 +38,6 @@
           "inline": "true"
         }
       ],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -1526,6 +1524,8 @@
       "guid": "ab596ed0-b841-4cd7-92cc-f10826363a53",
       "reactionFields": [],
       "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "true",
@@ -1568,7 +1568,7 @@
       "reactionFields": [],
       "embedfields": [],
       "saveToVariable": "rules",
-      "saveToVariableType": "temp",
+      "saveToVariableType": "server",
       "outputs": [
         {
           "label": "next response",
@@ -1601,7 +1601,7 @@
         "©2022 | Jeroentje#4261",
         "false",
         "rules",
-        "temp"
+        "server"
       ],
       "formnames": [
         "channelname",
@@ -1630,6 +1630,8 @@
         "✅"
       ],
       "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "✅",
@@ -1671,6 +1673,8 @@
       "guid": "8252a0f6-402a-4b5b-8870-740723f6012c",
       "reactionFields": [],
       "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",

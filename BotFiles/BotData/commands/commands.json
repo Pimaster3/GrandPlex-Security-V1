@@ -569,7 +569,7 @@
               "footer": "©2022 | Jeroentje#4261",
               "timestamp": "false",
               "savetovariable": "rules",
-              "savetovariabletype": "temp"
+              "savetovariabletype": "server"
             },
             {
               "name": "verify reaction rules",
